@@ -1,0 +1,7 @@
+{
+  "name": "IonicCustomComponent",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
