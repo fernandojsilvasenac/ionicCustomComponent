@@ -7,14 +7,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <button ion-item *ngFor="let artigo of artigos" (click)="abrirArtigo(artigo)">
+      <!-- Componente criado  -->
+      <!-- <artigo [artigo]="artigo"></artigo> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-card>
+        <!-- Código sem componente -->
+        <ion-item>
+          <h2>{{ artigo.autor }}</h2>
+          <p>{{ artigo.data }}</p>
+        </ion-item>
+
+        <img src="{{ artigo.imgUrl }}" />
+        <ion-card-content>
+          <ion-card-title text-wrap>
+            {{ artigo.id }} / {{ artigo.titulo }}
+          </ion-card-title>
+          <div text-wrap [innerHTML]=artigo.texto></div>
+        </ion-card-content>
+      </ion-card>
+    </button>
+  </ion-list>
 </ion-content>
